@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let letter of letters" (click)="onSelect(letter)" [class.selected]="letter.id === selectedLetter?.id">
+    {{letter.id | doubleCase}}
+  </li>
+</ul>
+<app-detail [letter]="selectedLetter"></app-detail>

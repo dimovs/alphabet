@@ -1,0 +1,23 @@
+<div *ngIf="letter">
+
+  <p>{{letter.id | doubleCase}}</p>
+  <p>{{letter.example | capitalizer}}</p>
+
+
+  <img src="../../assets/{{letter.image}}" alt="{{letter.example}}">
+
+  <p class="task">
+    Найдите (кликните) букву <span>{{letter.id}}</span> в слове:
+  </p>
+
+  <div class="test">
+    <div *ngIf="timerID">
+      <span *ngIf="isChecked === true">Правильно!</span>
+      <span *ngIf="isChecked === false">Неверно!</span>
+    </div>
+    <span *ngFor="let item of (letter.words | randomizer)" (click)="onSelect(item)">
+      {{item}}
+    </span>
+  </div>
+
+</div>
