@@ -1,4 +1,6 @@
-import { Component, OnInit , Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+
 
 import { Letter } from '../letter';
 
@@ -7,20 +9,20 @@ import { Letter } from '../letter';
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss']
 })
-export class DetailComponent implements OnInit {
+export class DetailComponent {
   @Input() letter: Letter;
 
   private timer = 1000;
   timerID: number;
   isChecked: boolean;
 
-  constructor() { }
+  onSelect(item): void {
+    const isValid = this.validate(item.innerText);
 
-  ngOnInit(): void {
-  }
+    if (isValid) {
+      item.style.color = 'rgba(255,0,0, 1)';
+    }
 
-  onSelect(item: string): void {
-    this.validate(item);
     this.showMessage();
   }
 
@@ -35,7 +37,7 @@ export class DetailComponent implements OnInit {
     }, this.timer);
   }
 
-  private validate(item: string): void {
-    this.isChecked = item.toLowerCase() === this.letter.id.toLowerCase();
+  private validate(item: string): boolean {
+    return this.isChecked = item.toLowerCase() === this.letter.id.toLowerCase();
   }
 }

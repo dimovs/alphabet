@@ -1,3 +1,100 @@
-.test span {
-  cursor: pointer;
+.detail {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  &__item {
+    font-size: 100px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    color: rgba(255,0,0, 1);
+    text-align: center;
+    vertical-align: middle;
+    height: 200px;
+
+    @media (min-width: 660px) {
+      font-size: 150px;
+      width: 50%;
+      height: 350px;
+    }
+  }
+
+  &__picture {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 660px) {
+      display: block;
+      width: 50%;
+      height: 300px;
+    }
+
+    p {
+      font-size: 40px;
+
+      @media (min-width: 660px) {
+        font-size: 40px;
+      }
+    }
+  }
+
+  &__tester {
+    margin: 0 auto;
+    width: 500px;
+    border-radius: 5px;
+    border: 2px solid lightgrey;
+  }
+
+  &__task {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+
+  &__letter {
+    color: rgba(255,0,0, 1);
+    font-size: 30px;
+  }
+
+  &__test {
+    position: relative;
+    padding: 0 80px;
+  }
+
+  &__popup {
+    position: absolute;
+    background: red;
+    right: 0px;
+    border-radius: 10px;
+    padding: 0px 10px;
+    color: rgba(255, 255, 255, 1);
+
+    &--checked {
+      background: rgba(10, 148, 28, 1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    cursor: pointer;
+
+    span {
+      cursor: pointer;
+      padding: 5px;
+      font-size: 28px;
+      font-weight: bold;
+
+      &:first-child {
+        text-transform: capitalize;
+      }
+    }
+  }
 }

@@ -1,0 +1,42 @@
+.header {
+  margin: 20px auto;
+  color: red;
+  font-size: 20px;
+  text-align: center;
+
+  @media (min-width: 660px) {
+    font-size: 30px;
+  }
+
+  @media (min-width: 960px) {
+    font-size: 40px;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: none;
+  border: none;
+
+  &--back {
+    background-color: rgba(50, 150, 255, 1);
+    width: 30%;
+    padding: 20px 10px;
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+
+    &:hover {
+      background-color: rgba(50, 150, 255, 0.9)
+    }
+
+    &:active {
+      background-color: rgba(50, 150, 255, 0.5)
+    }
+  }
+}
+

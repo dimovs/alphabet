@@ -1,0 +1,26 @@
+.btn {
+  font-family: inherit;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+
+  &--start {
+    width: 30%;
+    background-color: rgba(50, 150, 255, 1);
+    padding: 20px 10px;
+    margin-top: 10%;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+
+    &:hover {
+      background-color: rgba(50, 150, 255, 0.9)
+    }
+
+    &:active {
+      background-color: rgba(50, 150, 255, 0.5)
+    }
+  }
+}

@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: black;
+  font-family: "Roboto", "arial", sans-serif;
+  font-size: 14px;
+  line-height: 2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

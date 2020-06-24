@@ -1,23 +1,28 @@
-<div *ngIf="letter">
+<div *ngIf="letter" class="detail">
+  <p class="detail__item">{{letter.id | doubleCase}}</p>
 
-  <p>{{letter.id | doubleCase}}</p>
-  <p>{{letter.example | capitalizer}}</p>
+  <div class="detail__picture">
+    <img src="../../assets/{{letter.image}}" alt="{{letter.example}}">
+    <p>{{letter.example | capitalizer}}</p>
+  </div>
 
+  <div class="detail__tester">
+    <p class="detail__task">
+      Найдите (кликните) букву <span class="detail__letter">{{letter.id}}</span> в слове:
+    </p>
 
-  <img src="../../assets/{{letter.image}}" alt="{{letter.example}}">
+    <div class="detail__test">
+      <div *ngIf="timerID" class="detail__popup" [class.detail__popup--checked]="isChecked">
+        <span *ngIf="isChecked === true">Правильно!</span>
+        <span *ngIf="isChecked === false">Неверно!</span>
+      </div>
 
-  <p class="task">
-    Найдите (кликните) букву <span>{{letter.id}}</span> в слове:
-  </p>
-
-  <div class="test">
-    <div *ngIf="timerID">
-      <span *ngIf="isChecked === true">Правильно!</span>
-      <span *ngIf="isChecked === false">Неверно!</span>
+      <div class="detail__list">
+        <span #letterSpan *ngFor="let item of (letter.words | randomizer)" (click)="onSelect(letterSpan)">
+          {{item}}
+        </span>
+      </div>
     </div>
-    <span *ngFor="let item of (letter.words | randomizer)" (click)="onSelect(item)">
-      {{item}}
-    </span>
   </div>
 
 </div>
